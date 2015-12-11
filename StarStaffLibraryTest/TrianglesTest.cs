@@ -15,13 +15,13 @@ namespace StarStaffLibraryTest
         [Test, TestCaseSource(typeof(TrianglesTestData), "ValidData")]
         public void TestRightAngledTriangleAreaValid(double a, double b, double c, double expected)
         {
-            Assert.AreEqual(expected, Triangles.areaRightAngledTriangle(a, b, c), DELTA);
+            Assert.AreEqual(expected, Triangles.AreaRightAngledTriangle(a, b, c), DELTA);
         }
 
         [Test, TestCaseSource(typeof(TrianglesTestData), "InvalidData")]
         public void TestRightAngledTriangleAreaInvalid(double a, double b, double c)
         {
-            Assert.That(() => Triangles.areaRightAngledTriangle(a, b, c), Throws.TypeOf<ArgumentException>());
+            Assert.That(() => Triangles.AreaRightAngledTriangle(a, b, c), Throws.TypeOf<ArgumentException>());
         }
 
         public class TrianglesTestData

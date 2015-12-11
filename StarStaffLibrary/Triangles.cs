@@ -15,12 +15,12 @@ namespace StarStaffLibrary
             this.Precision = precision;
         }
 
-        public Precision getPrecision()
+        public Precision GetPrecision()
         {
             return Precision;
         }
 
-        public double areaRightAngledTriangle(double a, double b, double c)
+        public double AreaRightAngledTriangle(double a, double b, double c)
         {
             if (Double.IsNaN(a))
                 throw new ArgumentException("First argument is NaN");
