@@ -12,13 +12,13 @@ namespace StarStaffLibraryTest
         public static readonly Precision Precision = new Precision(DELTA);
         public static readonly Triangles Triangles = new Triangles(Precision);
 
-        [Test, TestCaseSource(typeof(TrianglesTestData), "ValidData")]
+        [Test, TestCaseSource(typeof(TrianglesTestData), "RightAngledTriangleAreaValid")]
         public void TestRightAngledTriangleAreaValid(double a, double b, double c, double expected)
         {
             Assert.AreEqual(expected, Triangles.AreaRightAngledTriangle(a, b, c), DELTA);
         }
 
-        [Test, TestCaseSource(typeof(TrianglesTestData), "InvalidData")]
+        [Test, TestCaseSource(typeof(TrianglesTestData), "RightAngledTriangleAreaInvalid")]
         public void TestRightAngledTriangleAreaInvalid(double a, double b, double c)
         {
             Assert.That(() => Triangles.AreaRightAngledTriangle(a, b, c), Throws.TypeOf<ArgumentException>());
@@ -26,7 +26,7 @@ namespace StarStaffLibraryTest
 
         public class TrianglesTestData
         {
-            public static IEnumerable ValidData
+            public static IEnumerable RightAngledTriangleAreaValid
             {
                 get
                 {
@@ -39,7 +39,7 @@ namespace StarStaffLibraryTest
                 }
             }
 
-            public static IEnumerable InvalidData
+            public static IEnumerable RightAngledTriangleAreaInvalid
             {
                 get
                 {
